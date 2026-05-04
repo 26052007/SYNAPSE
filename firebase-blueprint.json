@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "tasks": {
+      "title": "Task",
+      "description": "Academic tasks and assignments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "uid": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["todo", "in-progress", "done"] },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "type": { "type": "string" },
+        "deadline": { "type": "string" },
+        "aiSuggested": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "title", "status"]
+    },
+    "groups": {
+      "title": "Group",
+      "description": "Collaboration groups",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "ownerUid": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "code", "ownerUid"]
+    },
+    "group_members": {
+      "title": "Group Member",
+      "description": "Members of a group",
+      "type": "object",
+      "properties": {
+        "groupId": { "type": "string" },
+        "uid": { "type": "string" },
+        "cfHandle": { "type": "string" },
+        "joinedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["groupId", "uid"]
+    },
+    "group_notes": {
+      "title": "Group Note",
+      "description": "Shared files and folders in a group",
+      "type": "object",
+      "properties": {
+        "groupId": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["file", "folder"] },
+        "content": { "type": "string" },
+        "parentId": { "type": "string" },
+        "ownerUid": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["groupId", "name", "type", "ownerUid"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile documents"
+    },
+    "/tasks/{taskId}": {
+      "schema": "tasks",
+      "description": "Task documents"
+    },
+    "/groups/{groupId}": {
+      "schema": "groups",
+      "description": "Group documents"
+    },
+    "/group_members/{memberId}": {
+      "schema": "group_members",
+      "description": "Group membership documents"
+    },
+    "/group_notes/{noteId}": {
+      "schema": "group_notes",
+      "description": "Group shared notes and files"
+    }
+  }
+}
