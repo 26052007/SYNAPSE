@@ -2,11 +2,6 @@
 
 A unified, intelligent student station integrating focus tools, scheduling, collaborative learning, and competitive programming tracking into one seamless workflow. Built for the III 5.0 Hackathon organized by Team Gravity at Aparoksha'26.
 
-## 🏆 Achievements
-- **Winner:** Gold Medals at III 5.0 Hackathon
-- **Title:** Best Freshers Team
-- **Prize:** 10k INR
-
 ## 💡 The Problem
 Today’s students operate in a highly fragmented digital ecosystem. Staying on top of academics and habits means constantly switching between multiple platforms—a calendar on one tab, a habit tracker on your phone, notes in a separate app, and coding leaderboards entirely disconnected.
 
@@ -34,8 +29,13 @@ SYNAPSE is a unified, distraction-free environment that streamlines the student 
 - **Frontend:** React, Tailwind CSS, HTML, CSS, JavaScript
 - **Backend:** Node.js, Flask
 
+## 🏆 Achievements
+- **Winner:** Gold Medals at III 5.0 Hackathon
+- **Title:** Best Freshers Team
+- **Prize:** 10k INR
+
 ## 👥 The Team
-- **Archie Bansal**
+- **Sudhanshu Kalekinge**
 - **Daksh Pathariya**
 - **Bhavya Bansal**
 - **Amit Pal**
